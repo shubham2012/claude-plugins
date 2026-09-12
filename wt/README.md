@@ -28,7 +28,7 @@ itself prompts keep-or-remove — that's native behavior, not this plugin.
 
 ```
 /plugin marketplace add shubham2012/claude-plugins
-/plugin install wt@claude-plugins
+/plugin install wt@dev-workflows
 ```
 
 ## Note

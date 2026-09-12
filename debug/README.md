@@ -41,5 +41,5 @@ groomable via /ticket:groom. Blameless; pastes cleanly into the fixing PR.
 
 ```
 /plugin marketplace add shubham2012/claude-plugins
-/plugin install debug@claude-plugins
+/plugin install debug@dev-workflows
 ```

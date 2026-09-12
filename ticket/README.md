@@ -17,5 +17,5 @@ draft instead.
 
 ```
 /plugin marketplace add shubham2012/claude-plugins
-/plugin install ticket@claude-plugins
+/plugin install ticket@dev-workflows
 ```

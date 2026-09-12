@@ -1,5 +1,5 @@
 {
-  "name": "claude-plugins",
+  "name": "dev-workflows",
   "description": "Engineering-workflow plugins for Claude Code: prompt refining, PR lifecycle, ticket grooming, debugging, worktrees, and context continuity.",
   "owner": {
     "name": "Shubham Gupta"

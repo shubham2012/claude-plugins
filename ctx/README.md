@@ -46,7 +46,7 @@ personal working state, not shared docs.
 
 ```
 /plugin marketplace add shubham2012/claude-plugins
-/plugin install ctx@claude-plugins
+/plugin install ctx@dev-workflows
 ```
 
 Hooks register automatically with the install; they run only at compaction

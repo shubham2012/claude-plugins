@@ -33,7 +33,7 @@ repo named after this plugin):
 
 ```
 /plugin marketplace add shubham2012/claude-plugins
-/plugin install prompt@claude-plugins
+/plugin install prompt@dev-workflows
 ```
 
 Local development:

@@ -1,9 +1,9 @@
 # claude-plugins — repo conventions
 
 Open-source Claude Code plugin library. GitHub repo:
-`shubham2012/claude-plugins`; marketplace name inside it: `claude-plugins`
+`shubham2012/claude-plugins`; marketplace name inside it: `dev-workflows`
 (`/plugin marketplace add shubham2012/claude-plugins`, then
-`/plugin install <plugin>@claude-plugins`).
+`/plugin install <plugin>@dev-workflows`).
 
 ## Layout
 
@@ -59,8 +59,8 @@ Use `skills/`, never the legacy `commands/` dir.
 5. **Version-bump to propagate**: installed copies pin to plugin.json
    `version` — content changes without a bump silently don't reach users.
 6. **Ship loop**: commit (conventional, one concern) → push →
-   `claude plugin marketplace update claude-plugins` →
-   `claude plugin install|update <plugin>@claude-plugins` → verify with a
+   `claude plugin marketplace update dev-workflows` →
+   `claude plugin install|update <plugin>@dev-workflows` → verify with a
    real invocation where feasible (headless `claude -p --plugin-dir` works
    for passthrough paths; interactive gates need a live session).
 

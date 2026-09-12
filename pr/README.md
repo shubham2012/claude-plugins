@@ -28,7 +28,7 @@ list, and a one-line verdict.
 
 ```
 /plugin marketplace add shubham2012/claude-plugins
-/plugin install pr@claude-plugins
+/plugin install pr@dev-workflows
 ```
 
 ## Maintenance note

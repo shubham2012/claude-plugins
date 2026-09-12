@@ -32,11 +32,15 @@ Or pick individual plugins inside any Claude Code session:
 
 ```
 /plugin marketplace add shubham2012/claude-plugins
-/plugin install <prompt|pr|ticket|debug|wt|ctx>@claude-plugins
+/plugin install <prompt|pr|ticket|debug|wt|ctx>@dev-workflows
 ```
 
-Update later with `/plugin update <plugin>@claude-plugins`; uninstall via
+Update later with `/plugin update <plugin>@dev-workflows`; uninstall via
 `/plugin`.
+
+Note the two names: `shubham2012/claude-plugins` is the GitHub repo;
+`dev-workflows` is the marketplace name declared inside it — installs use
+`<plugin>@dev-workflows`.
 
 ## Design principles
 

@@ -1,5 +1,5 @@
 #!/bin/sh
-# One-command install of every plugin in the claude-plugins marketplace.
+# One-command install of every plugin in the dev-workflows marketplace.
 # Needs: claude CLI, curl, python3.
 # Run from anywhere:
 #   curl -fsSL https://raw.githubusercontent.com/shubham2012/claude-plugins/main/install.sh | sh
@@ -7,7 +7,7 @@
 set -eu
 
 REPO="shubham2012/claude-plugins"
-MKT="claude-plugins"
+MKT="dev-workflows"
 
 claude plugin marketplace add "$REPO" 2>/dev/null \
   || claude plugin marketplace update "$MKT"
