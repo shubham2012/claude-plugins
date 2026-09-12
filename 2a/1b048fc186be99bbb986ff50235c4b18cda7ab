@@ -1,0 +1,21 @@
+README.md
+  s_96de32ad2b7f29::t_ca617fce1cd537 45-84
+install-skills.sh
+  s_96de32ad2b7f29::t_27b66b5a7a562d 1-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "2a1b048fc186be99bbb986ff50235c4b18cda7ab",
+  "prompts": {},
+  "sessions": {
+    "s_96de32ad2b7f29": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "23fc69c7-9b68-442f-bf6c-f1c4177505d0",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Shubham Gupta <shubham2012@users.noreply.github.com>"
+    }
+  }
+}
