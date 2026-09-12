@@ -1,0 +1,37 @@
+.claude-plugin/marketplace.json
+  s_96de32ad2b7f29::t_ae9469a7249b6f 2
+CLAUDE.md
+  s_96de32ad2b7f29::t_c733699b013a69 4,6,62-63
+README.md
+  s_96de32ad2b7f29::t_8583fd65c70c00 35,38,41-44
+ctx/README.md
+  s_96de32ad2b7f29::t_6cb5e2f8912176 49
+debug/README.md
+  s_96de32ad2b7f29::t_dd76069613080a 44
+install.sh
+  s_96de32ad2b7f29::t_279041e5f7aa3b 2,10
+pr/README.md
+  s_96de32ad2b7f29::t_1f95747cd85a18 31
+prompt/README.md
+  s_96de32ad2b7f29::t_7b3800ba70daf4 36
+ticket/README.md
+  s_96de32ad2b7f29::t_d459742718c432 20
+wt/README.md
+  s_96de32ad2b7f29::t_300464bbd1e43b 31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "b5435b9d80b69a8307eee8ccd9bbec956f6d44e8",
+  "prompts": {},
+  "sessions": {
+    "s_96de32ad2b7f29": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "23fc69c7-9b68-442f-bf6c-f1c4177505d0",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Shubham Gupta <shubham2012@users.noreply.github.com>"
+    }
+  }
+}
