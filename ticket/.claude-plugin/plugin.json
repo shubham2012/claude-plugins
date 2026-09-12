@@ -1,0 +1,8 @@
+{
+  "name": "ticket",
+  "description": "Turn a vague bug report, thread, or idea into a well-formed tracker issue (Linear or GitHub Issues) with repro, expected/actual, and binary acceptance criteria. Invoked as /ticket:groom.",
+  "version": "0.1.1",
+  "author": {
+    "name": "Shubham Gupta"
+  }
+}

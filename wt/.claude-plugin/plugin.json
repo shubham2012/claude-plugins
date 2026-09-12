@@ -1,0 +1,8 @@
+{
+  "name": "wt",
+  "description": "Session worktree lifecycle: /wt:new creates a worktree from latest origin/main and switches this session into it (asks only for a name when none given); /wt:done checks PR state and removes or keeps it, gated.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Shubham Gupta"
+  }
+}

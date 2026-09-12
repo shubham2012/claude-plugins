@@ -1,0 +1,8 @@
+{
+  "name": "ctx",
+  "description": "Context continuity across compaction and session restarts: /ctx:save writes a durable session-state file (decisions, scope, plan remainder, bugs); /ctx:resume verifies it against reality and continues.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Shubham Gupta"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "debug",
+  "description": "Debugging lifecycle: incident triage (/debug:triage), prod-error-to-failing-test (/debug:repro), flaky-test diagnosis (/debug:flaky), house postmortems (/debug:rca).",
+  "version": "0.2.0",
+  "author": {
+    "name": "Shubham Gupta"
+  }
+}

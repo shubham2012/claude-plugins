@@ -1,0 +1,39 @@
+{
+  "name": "claude-plugins",
+  "description": "Engineering-workflow plugins for Claude Code: prompt refining, PR lifecycle, ticket grooming, debugging, worktrees, and context continuity.",
+  "owner": {
+    "name": "Shubham Gupta"
+  },
+  "plugins": [
+    {
+      "name": "prompt",
+      "source": "./prompt",
+      "description": "Turn a rough prompt into a repo-grounded spec with entry/exit criteria and guardrails, gated behind your review."
+    },
+    {
+      "name": "pr",
+      "source": "./pr",
+      "description": "PR lifecycle: /pr:ready drives a PR to approved; /pr:review reviews a diff against a house checklist."
+    },
+    {
+      "name": "ticket",
+      "source": "./ticket",
+      "description": "Groom a vague bug report or thread into a well-formed Linear issue (/ticket:groom)."
+    },
+    {
+      "name": "debug",
+      "source": "./debug",
+      "description": "Debugging lifecycle: incident triage, prod-error repro, flaky-test diagnosis, house postmortems (/debug:triage, :repro, :flaky, :rca)."
+    },
+    {
+      "name": "wt",
+      "source": "./wt",
+      "description": "Session worktree lifecycle: create from latest origin/main and enter (/wt:new), gated wrap-up with PR-merged check (/wt:done)."
+    },
+    {
+      "name": "ctx",
+      "source": "./ctx",
+      "description": "Context continuity: PreCompact/SessionStart hooks steer every compaction; /ctx:save and /ctx:resume for durable state across /clear and restarts."
+    }
+  ]
+}
