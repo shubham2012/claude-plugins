@@ -42,6 +42,46 @@ Note the two names: `shubham2012/claude-plugins` is the GitHub repo;
 `dev-workflows` is the marketplace name declared inside it — installs use
 `<plugin>@dev-workflows`.
 
+## Using outside Claude Code (opencode, Codex, others)
+
+The skills are plain SKILL.md instruction files, so they port to any tool
+that reads the format. One command installs the portable set (everything
+except `wt`, which drives Claude Code's native worktree tools):
+
+```bash
+# opencode  ->  ~/.config/opencode/skills/
+curl -fsSL https://raw.githubusercontent.com/shubham2012/claude-plugins/main/install-skills.sh | sh -s -- opencode
+
+# OpenAI Codex CLI  ->  ~/.agents/skills/
+curl -fsSL https://raw.githubusercontent.com/shubham2012/claude-plugins/main/install-skills.sh | sh -s -- codex
+
+# anything else: pass the tool's skills directory
+... | sh -s -- /path/to/skills-dir
+```
+
+Verified per each tool's current docs (2026-09-12):
+
+- **opencode** reads `SKILL.md` skill folders natively — including `.claude/skills/`
+  paths — so these work unmodified ([docs](https://opencode.ai/docs/skills/)).
+- **Codex CLI** scans `~/.agents/skills/` and repo-level `.agents/skills/` with
+  the same `name`/`description` frontmatter contract
+  ([docs](https://developers.openai.com/codex/skills)).
+- **Cursor** reportedly also reads legacy `.claude/skills/` paths for its skills
+  feature — try the custom-dir form; treat as unverified.
+- **Gemini CLI** has no skills mechanism (TOML prompt commands only) — not supported.
+
+**What degrades outside Claude Code, honestly:**
+
+- No slash-command arguments: invoke skills in plain language ("refine this
+  prompt: …") — every skill falls back to reading its input from your message.
+- Interactive option gates (AskUserQuestion) become plain questions in chat;
+  the wait-for-approval contract still holds, enforced by the skill text.
+- The `ctx` compaction hooks and `wt` worktree integration are Claude Code
+  mechanisms and don't port; `/ctx` save/resume skills work anywhere (they're
+  just files + git).
+- `/pr:review`'s read-only enforcement (`allowed-tools`) has no equivalent
+  elsewhere — there it's advisory by instruction only.
+
 ## Design principles
 
 - **Spec the outcome, not the path** — skills and the prompts they emit state
