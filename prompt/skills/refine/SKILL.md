@@ -117,7 +117,9 @@ not which files to edit or how to implement.
 Maximum three, only where the answer changes the work, each with concrete
 options. Zero questions is the right number most of the time. Include any
 identifier-typo suspicions from Stage 2 and any load-bearing no-match entities
-from Stage 1.
+from Stage 1. If MORE than three load-bearing unknowns exist, the ask is too
+fuzzy for refinement — suggest `/prompt:grill` (interview-first) instead of
+asking a fraction of what matters.
 
 ## Stage 7 — Assemble the refined prompt
 

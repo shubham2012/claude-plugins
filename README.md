@@ -7,6 +7,7 @@ context continuity. Each plugin is independent — install only what you want.
 | Plugin | Skill | What it does |
 |---|---|---|
 | [prompt](./prompt/) | `/prompt:refine` | Rough prompt → repo-grounded spec (entry/exit criteria, guardrails), gated behind your review |
+| [prompt](./prompt/) | `/prompt:grill` | Interview-first spec for big fuzzy asks: batched option rounds, stops when answers stop mattering |
 | [pr](./pr/) | `/pr:ready` | Drive a PR to approved: CI green, every comment addressed, ≤5 cycles, never merges |
 | [pr](./pr/) | `/pr:review` | Advisory house-checklist review of the failure classes human reviewers actually flag |
 | [ticket](./ticket/) | `/ticket:groom` | Vague report/thread → well-formed tracker issue (Linear or GitHub Issues) with binary acceptance criteria, gated |

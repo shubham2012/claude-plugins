@@ -1,4 +1,15 @@
-# prompt (refine)
+# prompt
+
+## /prompt:grill `<rough idea>`
+
+Interview-first spec building, for large or fuzzy asks where you want to be
+questioned before anything is written. Batched option-based rounds (stop as
+soon as answers stop changing the work; hard cap 3 rounds), grounded in the
+repo so it never asks what the code already answers, then the same
+outcome-spec and review gate as refine. Refine hands off to grill when it
+finds more than three load-bearing unknowns.
+
+# refine
 
 A Claude Code plugin that turns a rough prompt into a repo-grounded spec —
 entry criteria, exit criteria, guardrails — and gates execution behind your
