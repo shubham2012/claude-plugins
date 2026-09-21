@@ -65,4 +65,7 @@ State only what matters for this prompt, checked cheaply where possible:
 
 If the refined task contains independent parts (multiple unrelated files,
 separable subtasks), add one line to the refined prompt suggesting parallel
-subagent fan-out. One line only; do not design the orchestration.
+subagent fan-out. One line only; do not design the orchestration. The hint may
+suggest a model TIER per leg (fast tier for mechanical legs, mid-tier when
+judgment is involved) — never a model name, which expires (prompting.md
+anti-rule).

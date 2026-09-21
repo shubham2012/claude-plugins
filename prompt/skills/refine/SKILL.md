@@ -64,6 +64,13 @@ Tag the genre — it shapes stages 3–5:
      entity list; ask it to return, per entity: resolved path, one-line
      confirmation, and the most relevant `file:line`. The search noise stays out
      of this context.
+   - **Subagent model selection** (only when the dispatch mechanism accepts a
+     model choice; otherwise skip silently): mechanical entity lookup → the
+     fastest available tier; fuzzy resolution or judging relevance across many
+     entities → a mid-tier model; unable to decide → default to Sonnet 5
+     (current mid-tier, as of 2026-09 — update when models rotate). Never
+     spend a top-tier model on grounding: the search is mechanical, and the
+     refinement judgment stays in this conversation.
 4. Never invent a path, make target, or test command. Anything unresolved is
    labelled `[unverified]` — verified and unverified claims are never mixed
    without labels. A named entity with NO match at all, when it is load-bearing
