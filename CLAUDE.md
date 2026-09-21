@@ -82,6 +82,29 @@ Use `skills/`, never the legacy `commands/` dir.
 - AskUserQuestion: 2–4 options per question, "Other" auto-added, previews
   only on single-select.
 
+## Writing style (prose the session produces)
+
+Applies to READMEs, PR descriptions, commit messages, review replies, and any
+other prose written while working here. This section is deliberately
+self-contained — copy it into any repo's CLAUDE.md for the same effect.
+
+Write like a person explaining something to a colleague, not like a report
+generator. Lead with the point. Complete sentences in a natural register;
+contractions are fine. Prefer plain words over formal ones ("use" not
+"utilize", "so" not "therefore"). Vary sentence length the way speech does;
+one idea per sentence beats subordinate-clause towers.
+
+Avoid the tells of generated text: filler openers, hedging stacks ("it's
+worth noting that"), symmetrical bullet lists where every item is exactly one
+line, headers on three-paragraph documents, bolded topic sentences, and
+closing summaries that restate what was just said. If a sentence doesn't
+change what the reader knows or does, delete it. Punctuation is normal
+punctuation — use whatever the sentence needs.
+
+The goal is not to disguise anything; readable, direct prose is simply better
+writing. Where a document has a required structure (RCA template, PR
+template), the structure wins — write naturally inside it.
+
 ## House style for SKILL.md files
 
 Under ~170 lines; stages/steps numbered; hard rules bold; banned outcomes
