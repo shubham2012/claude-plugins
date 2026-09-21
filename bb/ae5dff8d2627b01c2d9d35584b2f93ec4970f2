@@ -1,0 +1,19 @@
+CLAUDE.md
+  s_930d96cb3a077a::t_e57310474c726e 85-107
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "bbae5dff8d2627b01c2d9d35584b2f93ec4970f2",
+  "prompts": {},
+  "sessions": {
+    "s_930d96cb3a077a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a9647bb99ca8acb11",
+        "model": "unknown"
+      },
+      "human_author": "Shubham Gupta <shubham2012@users.noreply.github.com>"
+    }
+  }
+}
