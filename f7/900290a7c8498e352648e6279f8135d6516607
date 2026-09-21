@@ -1,0 +1,27 @@
+README.md
+  s_930d96cb3a077a::t_d9a9d67ef31ee9 10
+prompt/.claude-plugin/plugin.json
+  s_930d96cb3a077a::t_5e3d2744ef2d29 4
+prompt/README.md
+  s_930d96cb3a077a::t_06bcb377798268 1-12
+prompt/skills/grill/SKILL.md
+  s_930d96cb3a077a::t_94bfc11e2ce885 1-62
+prompt/skills/refine/SKILL.md
+  s_930d96cb3a077a::t_8a66540c0a6164 120-122
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "f7900290a7c8498e352648e6279f8135d6516607",
+  "prompts": {},
+  "sessions": {
+    "s_930d96cb3a077a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a9647bb99ca8acb11",
+        "model": "unknown"
+      },
+      "human_author": "Shubham Gupta <shubham2012@users.noreply.github.com>"
+    }
+  }
+}
