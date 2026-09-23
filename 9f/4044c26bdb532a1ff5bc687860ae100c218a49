@@ -1,0 +1,25 @@
+build/.claude-plugin/plugin.json
+  s_96de32ad2b7f29::t_365fb5d6741378 4
+build/skills/hld/SKILL.md
+  s_96de32ad2b7f29::t_9f772ba4d17802 35-42
+build/skills/hld/references/hld-template.md
+  s_96de32ad2b7f29::t_ae6a5e9e2d608b 17-19
+build/skills/spec/SKILL.md
+  s_96de32ad2b7f29::t_8f8f6954d56970 35-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9f4044c26bdb532a1ff5bc687860ae100c218a49",
+  "prompts": {},
+  "sessions": {
+    "s_96de32ad2b7f29": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "23fc69c7-9b68-442f-bf6c-f1c4177505d0",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Shubham Gupta <shubham2012@users.noreply.github.com>"
+    }
+  }
+}
