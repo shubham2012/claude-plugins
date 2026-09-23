@@ -114,12 +114,24 @@ not which files to edit or how to implement.
 
 ## Stage 6 — Open questions
 
-Maximum three, only where the answer changes the work, each with concrete
-options. Zero questions is the right number most of the time. Include any
-identifier-typo suspicions from Stage 2 and any load-bearing no-match entities
-from Stage 1. If MORE than three load-bearing unknowns exist, the ask is too
-fuzzy for refinement — suggest `/prompt:grill` (interview-first) instead of
-asking a fraction of what matters.
+Investigate first, then apply the asymmetry: a needless question costs the
+user seconds; a wrong guess on a load-bearing ambiguity costs the whole run.
+
+- **MUST ask — not optional**: any ambiguity that SURVIVES grounding where
+  different answers lead to materially different work — what the target
+  behavior should be, which of two plausible readings is meant, scope
+  direction, risk trade-offs. Never bury one of these as an `[unverified]`
+  label or a silent assumption; those are for facts, not decisions.
+- **Never ask**: anything Stages 1–5 already answered, anything the user
+  already stated, or detail choices that don't change the work.
+- Maximum three, each with concrete options (mark a recommended one where
+  research supports it). **Zero questions is correct only when investigation
+  genuinely settled everything — it's an outcome grounding has to earn, not
+  a default to aim for.**
+- Include identifier-typo suspicions from Stage 2 and load-bearing no-match
+  entities from Stage 1. More than three load-bearing unknowns → the ask is
+  too fuzzy for refinement; suggest `/prompt:grill` (interview-first) instead
+  of asking a fraction of what matters.
 
 ## Stage 7 — Assemble the refined prompt
 
