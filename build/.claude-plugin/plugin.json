@@ -1,0 +1,8 @@
+{
+  "name": "build",
+  "description": "Document pipeline for feature work: /build:prd (quiz + research → PRD), /build:hld (system-grounded high-level design), /build:spec (EARS-criteria feature spec). Each drafts with marked ambiguity, self-reviews, gates before publishing to Notion or handing you markdown.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Shubham Gupta"
+  }
+}

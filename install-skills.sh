@@ -20,9 +20,12 @@ case "${1:-}" in
 esac
 
 # Use the local checkout when run from a clone; otherwise fetch a shallow one.
-src=$(CDPATH= cd -- "$(dirname -- "$0")" 2>/dev/null && pwd || true)
+case "$0" in
+  sh|-sh|bash|-bash|dash|-dash) src="" ;;
+  *) src=$(CDPATH= cd -- "$(dirname -- "$0")" 2>/dev/null && pwd || true) ;;
+esac
 cleanup=""
-if [ ! -d "$src/prompt/skills" ]; then
+if [ -z "$src" ] || [ ! -d "$src/prompt/skills" ]; then
   src=$(mktemp -d); cleanup="$src"
   git clone -q --depth 1 "https://github.com/$REPO" "$src"
 fi
@@ -30,8 +33,9 @@ fi
 mkdir -p "$dest"
 installed=""
 # wt is excluded: its skills drive Claude Code's native worktree tools.
-for plugin in prompt pr ticket debug ctx; do
+for plugin in prompt pr ticket debug ctx build; do
   for s in "$src/$plugin"/skills/*/; do
+    [ -d "$s" ] || continue
     name=$(basename "$s")
     if [ -e "$dest/$name" ]; then
       echo "skip $name (already exists at $dest/$name)"
@@ -43,7 +47,7 @@ for plugin in prompt pr ticket debug ctx; do
     installed="$installed $name"
   done
 done
-[ -n "$cleanup" ] && rm -rf "$cleanup"
+if [ -n "$cleanup" ]; then rm -rf "$cleanup"; fi
 
 echo "installed:$installed"
 echo "dest: $dest"

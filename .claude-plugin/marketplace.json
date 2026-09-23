@@ -31,6 +31,11 @@
       "description": "Session worktree lifecycle: create from latest origin/main and enter (/wt:new), gated wrap-up with PR-merged check (/wt:done)."
     },
     {
+      "name": "build",
+      "source": "./build",
+      "description": "Feature-work document pipeline: /build:prd, /build:hld, /build:spec — quiz + internal research + marked ambiguity + publish gate (Notion or markdown)."
+    },
+    {
       "name": "ctx",
       "source": "./ctx",
       "description": "Context continuity: PreCompact/SessionStart hooks steer every compaction; /ctx:save and /ctx:resume for durable state across /clear and restarts."

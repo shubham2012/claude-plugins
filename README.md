@@ -20,6 +20,9 @@ context continuity. Each plugin is independent — install only what you want.
 | [ctx](./ctx/) | (hooks) | Every compaction auto-preserves decisions, scope, plan, bugs; post-compaction re-grounding nudge |
 | [ctx](./ctx/) | `/ctx:save` | Durable session-state snapshot per branch — survives compaction, /clear, crashes |
 | [ctx](./ctx/) | `/ctx:resume` | Restore from snapshot, verified against the actual repo state, drift reported |
+| [build](./build/) | `/build:prd` | Idea → PRD: adaptive quiz, internal research, EARS criteria, Notion publish gate |
+| [build](./build/) | `/build:hld` | System-grounded design doc: alternatives required, PASS/FAIL constraint check vs the PRD |
+| [build](./build/) | `/build:spec` | Execution contract: traceable EARS criteria, interface contracts, test mapping, rollout |
 
 ## Install
 
