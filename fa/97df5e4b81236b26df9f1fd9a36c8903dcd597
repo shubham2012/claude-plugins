@@ -1,0 +1,21 @@
+prompt/.claude-plugin/plugin.json
+  s_96de32ad2b7f29::t_1e748d73661e4e 4
+prompt/skills/refine/SKILL.md
+  s_96de32ad2b7f29::t_a9b5747b0c7bbc 117-134
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fa97df5e4b81236b26df9f1fd9a36c8903dcd597",
+  "prompts": {},
+  "sessions": {
+    "s_96de32ad2b7f29": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "23fc69c7-9b68-442f-bf6c-f1c4177505d0",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Shubham Gupta <shubham2012@users.noreply.github.com>"
+    }
+  }
+}
