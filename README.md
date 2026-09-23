@@ -48,6 +48,24 @@ Note the two names: `shubham2012/claude-plugins` is the GitHub repo;
 `dev-workflows` is the marketplace name declared inside it — installs use
 `<plugin>@dev-workflows`.
 
+## Staying up to date
+
+New plugins get added and existing ones get version bumps. **Re-run the same
+install one-liner to pick up everything** — it installs plugins you don't
+have yet and updates the ones you do:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/shubham2012/claude-plugins/main/install.sh | sh
+```
+
+Then run `/reload-plugins` in any open Claude Code session (add `--force` if
+it warns); new sessions load fresh versions automatically. For hands-off
+updates, enable auto-update once: `/plugin` → **Marketplaces** →
+`dev-workflows` → **Enable auto-update** (off by default for third-party
+marketplaces). Single plugin: `/plugin update <name>@dev-workflows` — note
+`install` alone never updates an installed plugin; `update` is the verb that
+moves versions.
+
 ## Using outside Claude Code (opencode, Codex, others)
 
 The skills are plain SKILL.md instruction files, so they port to any tool

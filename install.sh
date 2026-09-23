@@ -17,9 +17,10 @@ claude plugin marketplace add "$REPO" 2>/dev/null \
 plugins=$(curl -fsSL "https://raw.githubusercontent.com/$REPO/main/.claude-plugin/marketplace.json" \
   | python3 -c 'import json,sys; print(" ".join(p["name"] for p in json.load(sys.stdin)["plugins"]))')
 
-echo "Installing: $plugins"
+echo "Installing/updating: $plugins"
 for p in $plugins; do
-  claude plugin install "$p@$MKT" || echo "  -> $p: skipped (see message above)"
+  claude plugin install "$p@$MKT" || true      # new plugins; no-op if present
+  claude plugin update "$p@$MKT" || echo "  -> $p: not updated (see message above)"
 done
 
 echo ""
