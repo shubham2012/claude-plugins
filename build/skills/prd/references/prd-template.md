@@ -61,3 +61,8 @@ Visible is the point; an empty section here after one quiz round is normal.
 ### 9. References
 PRD's evidence trail: threads, tickets, prior docs, research findings the
 quiz contradicted (note the tension). Everything linked, nothing pasted.
+
+### 10. Change log (appears once the doc has been revised)
+`<date> — <what changed, IDs named> — <why> — <downstream docs flagged>`,
+one line per revision, newest first. IDs are never renumbered; removals are
+marked in place, so the log plus the doc is the full history.

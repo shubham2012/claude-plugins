@@ -16,6 +16,15 @@ decisions.
 get the Quick form (Scope, Requirements & criteria, Test mapping) and one
 quiz round.
 
+**Mode** (also Stage 0): CREATE (default) or REVISE — REVISE when the input
+names an existing spec. In REVISE: fetch it first and change only the delta;
+R/AC-R IDs are immutable (new ones take next free numbers, dropped ones
+marked `Removed (<date>: <reason>)`); re-verify the test-mapping rows of
+every changed criterion; append a Change Log entry; `Publish to Notion`
+UPDATES the same page (`mcp__claude_ai_Notion__notion-update-page` or
+equivalent), never a duplicate. If implementation already started, say
+plainly which workstreams the revision invalidates.
+
 ## 1. Link chain
 
 Ask for HLD and/or PRD links and the ticket if not given. Their requirement

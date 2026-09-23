@@ -16,6 +16,16 @@ Cross-cutting concerns, Dependencies & sequencing (template sections 1, 3,
 6, 8) — and one quiz round. Full form is for multi-service or risk-bearing
 design. Say which you chose.
 
+**Mode** (also Stage 0): CREATE (default) or REVISE — REVISE when the input
+names an existing HLD (Notion link or file), or one is found and confirmed.
+In REVISE: fetch it first, change only the delta, keep section identities
+stable, append a Change Log entry, and RE-RUN the full constraint-check
+table — a revision can flip previously-PASS rows, and silently inheriting
+old PASSes is the drift this table exists to kill. At the gate,
+`Publish to Notion` UPDATES the same page/entry
+(`mcp__claude_ai_Notion__notion-update-page` or equivalent), never a
+duplicate. Name any spec sections the revision makes stale.
+
 ## 1. Upstream links first
 
 Ask for the PRD link (Notion or file) and ticket if not provided — the PRD's

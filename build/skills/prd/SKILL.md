@@ -15,6 +15,21 @@ gets the Quick form (One-liner, Goals/Non-goals, Requirements, Success
 criteria — nothing else) and at most ONE quiz round. Full pipeline is for
 genuinely new product surface. Say which form you chose in one line.
 
+**Mode** (also Stage 0): CREATE (default) or REVISE. REVISE fires when the
+input names an existing PRD (Notion link or file), or one is found and
+confirmed with the user. In REVISE:
+- Fetch the existing doc FIRST; it is the base — quiz and research only the
+  delta, never re-interview settled sections.
+- Existing FR/NFR/AC IDs are immutable: new requirements take the next free
+  numbers; dropped ones are marked `Removed (<date>: <reason>)`, never
+  deleted or renumbered — downstream docs reference these IDs.
+- Append a Change Log entry (template) — date, what changed, why.
+- At the gate, `Publish to Notion` UPDATES the same page
+  (`mcp__claude_ai_Notion__notion-update-page` or the session's equivalent),
+  never a duplicate page.
+- The final output names any downstream HLD/spec sections this change makes
+  stale, so drift is declared, not discovered.
+
 ## 1. Quiz the user (high-level first)
 
 Batched **AskUserQuestion** rounds (≤4 questions each, concrete options,

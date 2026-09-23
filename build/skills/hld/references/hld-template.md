@@ -55,3 +55,7 @@ Surviving `[NEEDS CLARIFICATION]` items, each with owner + decision-needed-by.
 
 ### 10. References
 Everything Stage 2 found: prior art threads, related HLDs, benchmark links.
+
+### 11. Change log (appears once the doc has been revised)
+`<date> — <what changed> — <why> — <constraint-check result after re-run> —
+<spec sections flagged stale>`, one line per revision, newest first.

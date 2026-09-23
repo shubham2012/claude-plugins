@@ -51,3 +51,7 @@ Surviving markers, owner + needed-by each.
 
 ### 8. References
 Threads, prior specs, benchmarks — links only.
+
+### 9. Change log (appears once the doc has been revised)
+`<date> — <IDs changed/added/removed> — <why> — <test rows re-verified> —
+<workstreams invalidated, if implementation started>`, newest first.
