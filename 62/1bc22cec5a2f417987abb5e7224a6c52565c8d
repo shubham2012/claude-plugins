@@ -1,0 +1,45 @@
+.claude-plugin/marketplace.json
+  s_96de32ad2b7f29::t_3daadfbf69b37c 36,42-46
+.github/workflows/registry-check.yml
+  s_96de32ad2b7f29::t_7e60e1e0085f63 1-33
+README.md
+  s_96de32ad2b7f29::t_7cdce579712541 26-27,41
+build/.claude-plugin/plugin.json
+  s_96de32ad2b7f29::t_b98ded5cf9f142 4
+build/README.md
+  s_96de32ad2b7f29::t_1339693f2e4bd4 3-5,39-47
+build/skills/adr/SKILL.md
+  s_96de32ad2b7f29::t_7a4379c74bad52 1-80
+build/skills/hld/SKILL.md
+  s_96de32ad2b7f29::t_9c7a4b38f4fdfa 68-69
+install-skills.sh
+  s_96de32ad2b7f29::t_4f9566d438a6f7 36
+onboard/.claude-plugin/plugin.json
+  s_96de32ad2b7f29::t_e9d64316e0136d 1-8
+onboard/README.md
+  s_96de32ad2b7f29::t_26d75ae35e6fec 1-40
+onboard/skills/agents/SKILL.md
+  s_96de32ad2b7f29::t_3fee8953b32cfa 1-116
+prompt/.claude-plugin/plugin.json
+  s_96de32ad2b7f29::t_35db1f28fe9cf9 4
+prompt/README.md
+  s_96de32ad2b7f29::t_51aa7dee1af808 6-12,119-121
+prompt/skills/grill/SKILL.md
+  s_96de32ad2b7f29::t_a983cf2573c2f4 28-61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "621bc22cec5a2f417987abb5e7224a6c52565c8d",
+  "prompts": {},
+  "sessions": {
+    "s_96de32ad2b7f29": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "23fc69c7-9b68-442f-bf6c-f1c4177505d0",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Shubham Gupta <shubham2012@users.noreply.github.com>"
+    }
+  }
+}
