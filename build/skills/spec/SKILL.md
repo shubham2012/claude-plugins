@@ -32,6 +32,11 @@ extended. References, threads, and prior acceptance criteria from
 Slack/Linear (via ToolSearch, if connected). Everything `file:line` or
 `[unverified]`.
 
+**Greenfield**: no modules or tests exist yet — ground in the chosen stack's
+conventions and the org's nearest sibling service instead. Every interface
+and test row is `to-create`, and workstream 1 is always the skeleton (repo
+layout, CI, test harness) so every later criterion has somewhere to run.
+
 ## 3. Quiz — gaps only
 
 ≤2 batched AskUserQuestion rounds with research-derived options: edge-case

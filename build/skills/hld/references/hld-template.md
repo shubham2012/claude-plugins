@@ -14,7 +14,9 @@ context for a reader with none.
 ### 2. Current state
 How the touched systems work today — `file:line` evidence, one diagram if it
 helps. Claims about current behavior are verified by reading code, never
-recalled.
+recalled. Greenfield: retitle "Starting point & constraints" — org context,
+candidate stack, integration surfaces; still evidence-based (sibling repos,
+org standards), never vibes.
 
 ### 3. Proposed design
 Components, data flow, and where new pieces sit. One Mermaid diagram

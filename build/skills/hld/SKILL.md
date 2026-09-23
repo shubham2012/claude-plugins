@@ -32,6 +32,14 @@ models and contracts in play, `file:line` evidence throughout. Check
 Slack/Linear/Notion (via ToolSearch, if connected) for prior art and earlier
 design discussions on the same area.
 
+**Greenfield** (new service/repo — nothing to read): grounding shifts, it
+doesn't disappear. Study how the org's nearest sibling services solve this
+class of problem, the applicable org standards, and external prior art; the
+template's Current state section becomes "Starting point & constraints"
+(org context, candidate stack, integration surfaces). Alternatives and the
+constraint check matter MORE here — with no existing structure to lean on,
+they're the only thing between the design and a coin flip.
+
 ## 3. Quiz — only the decisions the system can't answer
 
 Batched AskUserQuestion rounds (≤4 questions, options from the research —
