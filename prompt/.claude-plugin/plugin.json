@@ -1,7 +1,7 @@
 {
   "name": "prompt",
   "description": "Turn a rough prompt into a repo-grounded spec with entry/exit criteria and guardrails, gated behind your review. Invoked as /prompt:refine.",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "author": {
     "name": "Shubham Gupta"
   }

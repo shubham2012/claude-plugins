@@ -3,11 +3,13 @@
 ## /prompt:grill `<rough idea>`
 
 Interview-first spec building, for large or fuzzy asks where you want to be
-questioned before anything is written. Batched option-based rounds (stop as
-soon as answers stop changing the work; hard cap 3 rounds), grounded in the
-repo so it never asks what the code already answers, then the same
-outcome-spec and review gate as refine. Refine hands off to grill when it
-finds more than three load-bearing unknowns.
+questioned before anything is written. Decisions form a design tree worked in
+frontier rounds — each round asks only questions whose prerequisites are
+settled, with a recommended answer marked; facts are researched, never asked.
+Terminates when the frontier is empty (4-round backstop parks leftovers as
+`[NEEDS CLARIFICATION]`), then the same outcome-spec and review gate as
+refine. Refine hands off to grill when it finds more than three load-bearing
+unknowns.
 
 # refine
 
@@ -114,4 +116,6 @@ source URLs for refreshing.
 
 Inspired by (ideas only — no code copied): genre-conditional criteria and the
 exemplar file from GaZmagik/claude-prompt-improver; Explore-subagent grounding
-and trivial-passthrough triage from severity1/claude-code-prompt-improver.
+and trivial-passthrough triage from severity1/claude-code-prompt-improver;
+grill's design-tree/frontier rounds and facts-vs-decisions split from Matt
+Pocock's grilling skill (mattpocock/skills, adopted 2026-09-23).

@@ -33,7 +33,7 @@ fi
 mkdir -p "$dest"
 installed=""
 # wt is excluded: its skills drive Claude Code's native worktree tools.
-for plugin in prompt pr ticket debug ctx build; do
+for plugin in prompt pr ticket debug ctx build onboard; do
   for s in "$src/$plugin"/skills/*/; do
     [ -d "$s" ] || continue
     name=$(basename "$s")

@@ -1,0 +1,33 @@
+name: registry-check
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install-skills.sh plugin list matches marketplace.json
+        run: |
+          python3 - <<'EOF'
+          import json, re, sys, pathlib
+          manifest = {p["name"] for p in json.load(open(".claude-plugin/marketplace.json"))["plugins"]}
+          m = re.search(r'^for plugin in (.+?); do', pathlib.Path("install-skills.sh").read_text(), re.M)
+          script = set(m.group(1).split()) if m else set()
+          # wt is deliberately excluded from cross-tool installs (native worktree tools)
+          expected = manifest - {"wt"}
+          if script != expected:
+              sys.exit(f"install-skills.sh list {sorted(script)} != marketplace minus wt {sorted(expected)}")
+          print(f"in sync: {sorted(script)}")
+          EOF
+      - name: every marketplace source directory exists with a manifest
+        run: |
+          python3 - <<'EOF'
+          import json, os, sys
+          for p in json.load(open(".claude-plugin/marketplace.json"))["plugins"]:
+              path = os.path.join(p["source"], ".claude-plugin", "plugin.json")
+              if not os.path.isfile(path):
+                  sys.exit(f"missing {path}")
+          print("all plugin manifests present")
+          EOF

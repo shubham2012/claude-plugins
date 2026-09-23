@@ -1,7 +1,8 @@
 # build
 
-The document pipeline for feature work — three skills, one enforced order of
-thought: **what/why → how → execution contract**. Each skill quizzes you only
+The document pipeline for feature work — four skills. Three form an enforced
+order of thought: **what/why → how → execution contract**; the fourth (adr)
+sits beside the pipeline for standalone decisions. Each skill quizzes you only
 on what it can't research, grounds everything else in the repo and connected
 tools (Slack/Linear/Notion), drafts with `[NEEDS CLARIFICATION]` markers
 instead of silent guesses, self-reviews to a named verdict, and gates before
@@ -34,6 +35,15 @@ IDs, per-workstream interface contracts (consumes/produces, exact
 signatures), a test-mapping table where every criterion names a real test,
 rollout with abort criteria, `[P]` marks on genuinely independent work. After
 this, implementation starts via /prompt:refine with zero new decisions.
+
+## /build:adr `<the decision>`
+
+One decision, recorded properly: context with the forcing constraint, the
+decision in a sentence, real alternatives with named trade-offs, consequences
+including the costs. Numbered into the repo's ADR directory (or Notion, or
+markdown), and **immutable once accepted** — changing the decision means a
+new ADR that supersedes the old one, never an edit. For choices too small
+for an HLD; the HLD's alternatives section points here.
 
 ## Where the design came from
 

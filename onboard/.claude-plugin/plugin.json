@@ -1,0 +1,8 @@
+{
+  "name": "onboard",
+  "description": "Agent-docs doctor: /onboard:agents generates or refreshes a repo's CLAUDE.md/AGENTS.md by mining the repo itself — commands verified by running them, conventions from merged PRs (dated), never-rules from evidence — gated before writing.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Shubham Gupta"
+  }
+}

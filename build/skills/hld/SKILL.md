@@ -65,7 +65,8 @@ support → `[NEEDS CLARIFICATION]`, never a silent guess. Cap: 2 rounds.
 Fill the template. Mandatory mechanics:
 
 - **Alternatives considered**: ≥2 real options with trade-offs and why
-  rejected — a design with no alternatives is a decision, not a design.
+  rejected — a design with no alternatives is a decision, not a design. (A
+  standalone choice worth its own permanent record → /build:adr.)
 - **Constraint check**: a section re-asserting each PRD requirement ID and
   org standard against this design — PASS/FAIL per item, every FAIL carries
   a written justification or a design change. Constraints are re-checked,

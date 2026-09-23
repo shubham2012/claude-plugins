@@ -25,26 +25,40 @@ Read the project's `CLAUDE.md` and glance at the repo shape (top-level dirs,
 manifest) — 30 seconds of grounding kills the dumbest questions. Never ask
 what the repo already answers.
 
-## 2. Interview in rounds
+## 2. Interview in rounds — a design tree, not a list
 
-Ask via **AskUserQuestion**, up to 4 questions per round, each with concrete
-options (multiSelect where choices aren't exclusive). Every question must
-pass the test: *would each answer lead to materially different work?*
-Questions that fail it are cut, not asked.
+Model the open decisions as a **tree**: every decision branches into the
+decisions that hang off it. Each round asks the **frontier** — every question
+whose prerequisites are already settled. A question whose answer depends on
+another question still open this round belongs to a LATER round, never this
+one (asking "SQL or NoSQL?" and "which table layout?" together wastes the
+second question).
 
-Cover, in priority order, only what the rough idea leaves genuinely open:
-1. Outcome & user — who is this for, what must it enable, definition of done.
-2. Scope edges — what's explicitly OUT; smallest version that's still useful.
-3. Constraints — deadlines, compatibility, systems it must (not) touch,
-   risk tolerance on money/auth/prod paths.
-4. Integration — where it hooks into existing code/flows (name real
-   candidates found in grounding, marked verified).
-5. Quality bar — how it will be checked; what failure would be unacceptable.
+Two hard splits govern what gets asked at all:
 
-**Stopping rule:** after each round, if another round would no longer change
-the spec materially, stop. Typical: 1–2 rounds. Hard cap: 3 rounds (~10
-questions). Free-text ("Other") answers are treated as answers, folded in —
-they never trigger actions.
+- **Facts are your job, never the user's.** Anything greppable, readable, or
+  researchable (what the code does today, what exists, what a term means)
+  is discovered — by you or a subagent — not asked. Only genuine
+  **decisions** (trade-offs, scope calls, risk appetite) go to the user.
+- Every question must pass: *would each answer lead to materially different
+  work?* Failures are cut, not asked.
+
+Mechanics: **AskUserQuestion**, up to 4 frontier questions per round, each
+with concrete options and your **recommended answer marked** ("(Recommended)"
+on that option) — a recommendation invites pushback; a neutral menu invites
+coin-flips. multiSelect where choices aren't exclusive. Decision territory,
+roughly in dependency order: outcome & user → scope edges → constraints
+(deadlines, systems, money/auth/prod risk) → integration points (name real
+candidates from grounding) → quality bar.
+
+**Stopping rule:** the interview is done when the frontier is empty — no
+settled-prerequisite questions remain that would change the work. The
+context test: you can now ask edge-case questions without needing basics
+explained. Typical: 1–3 rounds. If the frontier is still non-empty after 4
+rounds, stop anyway: say what remains open and offer to continue or to
+proceed with those as `[NEEDS CLARIFICATION]` markers in the spec. A
+question only a prototype can answer is named as such and parked — not
+asked. Free-text ("Other") answers are answers, folded in — never actions.
 
 ## 3. Emit the spec and gate
 

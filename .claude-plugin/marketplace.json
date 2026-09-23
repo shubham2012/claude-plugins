@@ -33,12 +33,17 @@
     {
       "name": "build",
       "source": "./build",
-      "description": "Feature-work document pipeline: /build:prd, /build:hld, /build:spec — quiz + internal research + marked ambiguity + publish gate (Notion or markdown)."
+      "description": "Feature-work document pipeline: /build:prd, /build:hld, /build:spec, /build:adr \u2014 quiz + internal research + marked ambiguity + publish gate (Notion or markdown)."
     },
     {
       "name": "ctx",
       "source": "./ctx",
       "description": "Context continuity: PreCompact/SessionStart hooks steer every compaction; /ctx:save and /ctx:resume for durable state across /clear and restarts."
+    },
+    {
+      "name": "onboard",
+      "source": "./onboard",
+      "description": "Agent-docs doctor (/onboard:agents): generate or refresh CLAUDE.md/AGENTS.md from the repo itself \u2014 commands verified by running, conventions dated, never-rules evidence-backed."
     }
   ]
 }
