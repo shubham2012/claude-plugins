@@ -5,6 +5,21 @@ Open-source Claude Code plugin library. GitHub repo:
 (`/plugin marketplace add shubham2012/claude-plugins`, then
 `/plugin install <plugin>@dev-workflows`).
 
+## Commands
+
+- `claude plugin validate .` and `claude plugin validate ./<plugin>`:
+  verified: ran 2026-10-08, marketplace and all 9 plugins pass clean.
+- Flags/subcommands confirmed in `--help`, not run here:
+  `claude [-p] --plugin-dir ./<plugin>` (test without installing),
+  `claude plugin marketplace update dev-workflows`,
+  `claude plugin install|update <plugin>@dev-workflows`.
+- CI: `.github/workflows/registry-check.yml` (job `sync`, every PR and push
+  to main) fails if the `install-skills.sh` plugin list drifts from
+  `marketplace.json` minus `wt`, a marketplace source lacks
+  `.claude-plugin/plugin.json`, or a re-run of `install-skills.sh` fails to
+  refresh its own (marker-tagged) skills or touches a user's same-named
+  skill. All three ran locally 2026-10-08 and pass.
+
 ## Layout
 
 Each plugin is a top-level directory:
@@ -17,9 +32,17 @@ Each plugin is a top-level directory:
 ```
 
 Every plugin is registered in `.claude-plugin/marketplace.json`. `install.sh`
-reads that manifest dynamically — adding a plugin there is ALL the installer
-needs. Also add a row per skill to the root README table.
-Use `skills/`, never the legacy `commands/` dir.
+reads that manifest dynamically, but `install-skills.sh` (the cross-tool
+installer) carries a hardcoded plugin list: update it when adding a plugin
+(CI fails if you don't). Also add a row per skill to the root README table;
+nothing enforces that, so check it by hand. Use `skills/`, never the legacy
+`commands/` dir.
+
+Root files: `.claude-plugin/marketplace.json` (the manifest), `install.sh`
+(Claude Code installer and updater), `install-skills.sh` (copies SKILL.md
+folders into other tools), `.github/workflows/registry-check.yml`,
+`LICENSE` (MIT). `ctx/` is the only plugin with hooks
+(`ctx/hooks/hooks.json` plus two scripts).
 
 ## Adding or changing a plugin — the pattern
 
