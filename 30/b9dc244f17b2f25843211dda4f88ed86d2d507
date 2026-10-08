@@ -1,0 +1,23 @@
+.github/workflows/registry-check.yml
+  s_4f14c939b947ab::t_cd6437154ad074 24-39
+README.md
+  s_4f14c939b947ab::t_8f75ba72749040 87-93
+install-skills.sh
+  s_4f14c939b947ab::t_516d7c8b808972 35-38,45-53,55-60,62-66,72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "30b9dc244f17b2f25843211dda4f88ed86d2d507",
+  "prompts": {},
+  "sessions": {
+    "s_4f14c939b947ab": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f0affe07-a5fc-4694-a46b-09e42e1b85db",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shubham Gupta <shubham2012@users.noreply.github.com>"
+    }
+  }
+}
