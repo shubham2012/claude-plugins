@@ -21,6 +21,22 @@ jobs:
               sys.exit(f"install-skills.sh list {sorted(script)} != marketplace minus wt {sorted(expected)}")
           print(f"in sync: {sorted(script)}")
           EOF
+      - name: install-skills.sh updates its own skills and leaves user skills alone
+        run: |
+          set -eu
+          d=$(mktemp -d)
+          mkdir "$d/refine" && echo mine > "$d/refine/SKILL.md"
+          sh ./install-skills.sh "$d" > /dev/null
+          grep -qx mine "$d/refine/SKILL.md" || { echo "overwrote a user skill"; exit 1; }
+          [ -f "$d/grill/.dev-workflows-installed" ] || { echo "marker missing"; exit 1; }
+          echo stale > "$d/grill/SKILL.md"
+          touch "$d/grill/dropped-upstream"
+          out=$(sh ./install-skills.sh "$d")
+          ! grep -qx stale "$d/grill/SKILL.md" || { echo "re-run didn't update grill"; exit 1; }
+          [ ! -e "$d/grill/dropped-upstream" ] || { echo "re-run left a stale file"; exit 1; }
+          ! ls -a "$d" | grep -q 'dev-workflows-tmp' || { echo "staging dir left behind"; exit 1; }
+          echo "$out" | grep -q '^updated:.* grill' || { echo "grill not reported as updated"; exit 1; }
+          echo "update path ok"
       - name: every marketplace source directory exists with a manifest
         run: |
           python3 - <<'EOF'

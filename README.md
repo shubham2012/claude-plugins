@@ -84,6 +84,13 @@ curl -fsSL https://raw.githubusercontent.com/shubham2012/claude-plugins/main/ins
 ... | sh -s -- /path/to/skills-dir
 ```
 
+Re-run the same command to update. It adds new skills and replaces the ones
+it installed earlier (each carries a `.dev-workflows-installed` marker), so
+local edits inside those folders are overwritten; copy a skill under a new
+name to customise it. A same-named folder without the marker is yours and is
+skipped. Skills installed before the marker existed are skipped too: delete
+those folders once and re-run.
+
 Verified per each tool's current docs (2026-09-12):
 
 - **opencode** reads `SKILL.md` skill folders natively — including `.claude/skills/`
