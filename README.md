@@ -25,6 +25,7 @@ context continuity. Each plugin is independent — install only what you want.
 | [build](./build/) | `/build:spec` | Execution contract: traceable EARS criteria, interface contracts, test mapping, rollout |
 | [build](./build/) | `/build:adr` | One decision, real alternatives, consequences — numbered, immutable once accepted, supersede don't edit |
 | [onboard](./onboard/) | `/onboard:agents` | Generate/refresh CLAUDE.md/AGENTS.md from the repo: commands verified by running, conventions dated |
+| [write](./write/) | `/write:humanize` | Strip generated-text patterns from a draft, file, or PR description without changing a fact; writes gated |
 
 ## Install
 
@@ -38,7 +39,7 @@ Or pick individual plugins inside any Claude Code session:
 
 ```
 /plugin marketplace add shubham2012/claude-plugins
-/plugin install <prompt|pr|ticket|debug|wt|ctx|build|onboard>@dev-workflows
+/plugin install <prompt|pr|ticket|debug|wt|ctx|build|onboard|write>@dev-workflows
 ```
 
 Update later with `/plugin update <plugin>@dev-workflows`; uninstall via
