@@ -41,6 +41,13 @@ green + review as required regardless.
 
 ## The loop (hard cap: 5 cycles — never exceed it)
 
+**The loop is the task.** A push is the MIDDLE of a cycle, never the end of
+the work: every push triggers CI and the review bots, and their results are
+the next cycle's input. Do not end your turn after pushing — ending before
+the exit conditions, the cap, or a genuine human-blocked state is a contract
+violation. Before ending any turn, check: if none of those three hold, the
+next action is yours — take it now.
+
 ### 1. CI
 `gh pr checks <n> --json name,state,link` lists checks and links to their
 runs. For each failure, extract the run ID from the link and read the actual
@@ -95,9 +102,24 @@ For each unresolved thread:
 - **Idempotency**: skip threads you already replied to in a previous cycle
   unless the reviewer responded since.
 
-### 3. Re-check and exit
-After pushes, re-poll checks and threads. Exit when: approved AND no
-unresolved threads AND CI green → done. Cap reached → done (partial).
+### 3. Wait for the push's consequences, then re-check
+
+After every push, actually WAIT for what the push causes — checking
+immediately and seeing nothing new is how the loop dies early:
+
+- **CI**: `gh pr checks <n> --watch` blocks until checks resolve (fall back
+  to polling with `sleep` between checks if watch is unavailable).
+- **Bot re-review**: if a review bot re-reviews every push, learn its usual
+  delay from the timestamps of its reviews on earlier pushes. After CI
+  settles, wait at least that long since the push (sleep in chunks), then
+  re-fetch review threads. No new bot review yet → wait one more interval
+  before concluding there are no new comments.
+
+Then re-run steps 1-2 on whatever arrived. Exit ONLY when: approved (if a
+review bot gates this repo, its re-review of the LATEST push shows no
+unaddressed findings) AND no unresolved threads AND CI green → done. Cap
+reached → done (partial). All threads addressed-pending-reviewers with CI
+green → validly blocked on humans; say exactly that in the exit summary.
 
 ## Guardrails
 
