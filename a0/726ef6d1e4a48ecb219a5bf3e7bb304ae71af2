@@ -1,0 +1,23 @@
+prompt/.claude-plugin/plugin.json
+  s_4f14c939b947ab::t_fb13f7517b4e93 4
+prompt/README.md
+  s_4f14c939b947ab::t_d320ae2953c16a 11-12,26-29,34
+prompt/skills/refine/SKILL.md
+  s_4f14c939b947ab::t_19a5dcd84ec5f1 115-161,199-200,222-224
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a0726ef6d1e4a48ecb219a5bf3e7bb304ae71af2",
+  "prompts": {},
+  "sessions": {
+    "s_4f14c939b947ab": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f0affe07-a5fc-4694-a46b-09e42e1b85db",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shubham Gupta <shubham2012@users.noreply.github.com>"
+    }
+  }
+}
