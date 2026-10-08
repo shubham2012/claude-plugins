@@ -1,7 +1,7 @@
 # PRD template (LLM-optimized)
 
 Synthesized 2026-09-23 from the convergent mechanisms of spec-kit, Kiro, and
-BMAD PRD templates plus Nirvana document style (narrative with numbers).
+BMAD PRD templates, written as narrative with numbers.
 Omit any section with nothing real to say — an empty section is a defect.
 Length scales to the ask; the Quick form is just sections 1, 3, 5, 6.
 
@@ -49,6 +49,8 @@ spec reference these IDs — never renumber after publishing.
 ### 6. Success criteria & metrics
 How we'll know it worked post-launch: target metrics with baseline and
 timeframe, plus guardrail metrics that must NOT regress. Binary or numeric.
+For a material feature (Stage 0 call), each metric names where it's watched
+in production (dashboard or monitor).
 
 ### 7. Dependencies & risks
 Systems, teams, migrations, sequencing this needs — each verified (link,

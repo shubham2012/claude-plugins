@@ -41,10 +41,13 @@ Workstream A [P]
 ### 5. Test mapping
 | Criterion | Test (named, real path) | exists / to-create |
 Every AC row filled. The suite command(s) that must pass, verbatim.
+Each monitor the HLD's Alerting entry calls for gets a row too:
+`Monitor: <signal>` | its monitor-as-code path | exists / to-create.
 
 ### 6. Rollout
 Flag/gate, migration order with rollbacks, monitoring to watch during
-rollout, and the abort criterion ("roll back if X exceeds Y").
+rollout, and the abort criterion ("roll back if X exceeds Y"). The
+permanent monitors are the ones in the test mapping above.
 
 ### 7. Open questions
 Surviving markers, owner + needed-by each.

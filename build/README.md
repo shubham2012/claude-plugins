@@ -24,7 +24,10 @@ code can't answer, and drafts with two mechanics that don't bend: ≥2 real
 alternatives with rejection reasons, and a **constraint-check table**
 (PASS/FAIL per PRD requirement and org standard — FAILs need written
 justification). Cross-cutting sections are mandatory: failure modes,
-retry-path concurrency, telemetry parity, migration safety, rollout+rollback.
+retry-path concurrency, telemetry parity, alerting, migration safety,
+rollout+rollback. For a material feature, every failure mode needs a
+monitor-as-code or a written "not alerted because"; a gap keeps the verdict
+at NEEDS-INPUT.
 Publishes to the team's Notion HLD location (destination confirmed before
 writing) or hands you markdown.
 
@@ -32,9 +35,10 @@ writing) or hands you markdown.
 
 The execution contract: scope in/out, EARS criteria traceable to upstream
 IDs, per-workstream interface contracts (consumes/produces, exact
-signatures), a test-mapping table where every criterion names a real test,
-rollout with abort criteria, `[P]` marks on genuinely independent work. After
-this, implementation starts via /prompt:refine with zero new decisions.
+signatures), a test-mapping table where every criterion names a real test
+and every HLD monitor names its monitor-as-code path, rollout with abort
+criteria, `[P]` marks on genuinely independent work. After this,
+implementation starts via /prompt:refine with zero new decisions.
 
 ## /build:adr `<the decision>`
 

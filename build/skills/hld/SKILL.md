@@ -16,12 +16,18 @@ Cross-cutting concerns, Dependencies & sequencing (template sections 1, 3,
 6, 8) — and one quiz round. Full form is for multi-service or risk-bearing
 design. Say which you chose.
 
+**Material call** (also Stage 0): say whether this is a material feature
+(it adds a new user-facing path, service, job or integration; any one
+counts). That call drives the monitoring requirements below; when unsure,
+treat it as material.
+
 **Mode** (also Stage 0): CREATE (default) or REVISE — REVISE when the input
 names an existing HLD (Notion link or file), or one is found and confirmed.
 In REVISE: fetch it first, change only the delta, keep section identities
 stable, append a Change Log entry, and RE-RUN the full constraint-check
 table — a revision can flip previously-PASS rows, and silently inheriting
-old PASSes is the drift this table exists to kill. At the gate,
+old PASSes is the drift this table exists to kill. Re-run the Alerting
+check the same way against the revised failure modes. At the gate,
 `Publish to Notion` UPDATES the same page/entry
 (`mcp__claude_ai_Notion__notion-update-page` or equivalent), never a
 duplicate. Name any spec sections the revision makes stale.
@@ -72,8 +78,9 @@ Fill the template. Mandatory mechanics:
   a written justification or a design change. Constraints are re-checked,
   never assumed inherited.
 - Cross-cutting concerns are sections, not afterthoughts: failure modes,
-  concurrency/idempotency on retry paths, observability parity, migration
-  safety, rollout + rollback.
+  concurrency/idempotency on retry paths, observability parity, alerting
+  (a monitor or a written "not alerted because" per failure mode),
+  migration safety, rollout + rollback.
 - Unresolved points → inline `[NEEDS CLARIFICATION: …]`, one resolution
   round, survivors land in Open Questions visibly.
 
@@ -81,7 +88,10 @@ Fill the template. Mandatory mechanics:
 
 No placeholders/banned phrases; every PRD FR maps to a component or an
 explicit "not addressed because"; every alternative has a rejection reason;
-diagram matches prose. Verdict: **READY** / **NEEDS-INPUT**, one line.
+diagram matches prose. For a material feature: Failure modes is non-empty, the
+Alerting entry is present, and every failure mode has a monitor or a written
+"not alerted because <reason>". A missing entry or an uncovered failure mode
+is NEEDS-INPUT, never READY. Verdict: **READY** / **NEEDS-INPUT**, one line.
 
 ## 6. Gate, then publish
 

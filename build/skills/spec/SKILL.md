@@ -16,13 +16,18 @@ decisions.
 get the Quick form (Scope, Requirements & criteria, Test mapping) and one
 quiz round.
 
+**Material call** (also Stage 0): say whether this is a material feature
+(it adds a new user-facing path, service, job or integration; any one
+counts). That call drives the monitoring requirements below; when unsure,
+treat it as material.
+
 **Mode** (also Stage 0): CREATE (default) or REVISE — REVISE when the input
 names an existing spec. In REVISE: fetch it first and change only the delta;
-R/AC-R IDs are immutable (new ones take next free numbers, dropped ones
-marked `Removed (<date>: <reason>)`); re-verify the test-mapping rows of
-every changed criterion; append a Change Log entry; `Publish to Notion`
-UPDATES the same page (`mcp__claude_ai_Notion__notion-update-page` or
-equivalent), never a duplicate. If implementation already started, say
+R/AC-R IDs are immutable (new ones take next free numbers, dropped ones marked
+`Removed (<date>: <reason>)`); re-verify the test-mapping rows of every
+changed criterion and every monitor row; append a Change Log entry; `Publish
+to Notion` UPDATES the same page (`mcp__claude_ai_Notion__notion-update-page`
+or equivalent), never a duplicate. If implementation already started, say
 plainly which workstreams the revision invalidates.
 
 ## 1. Link chain
@@ -66,7 +71,9 @@ Fill the template. Mechanics enforced:
   implementers see only their slice; the contracts keep slices consistent.
 - **Test mapping**: every criterion → a named test (existing suite or new
   test at a real path). No runnable check exists → say so and the first task
-  is creating one.
+  is creating one. Each monitor the HLD calls for maps to a monitor-as-code
+  path the same way; a material feature with no HLD defines its monitors
+  here.
 - Independent workstreams marked `[P]` (no shared files/contracts).
 - Unresolved → `[NEEDS CLARIFICATION]`, one resolution round, survivors stay
   visible in Open Questions.
@@ -74,7 +81,9 @@ Fill the template. Mechanics enforced:
 ## 5. Self-review (named verdict)
 
 Every upstream FR covered or explicitly deferred with a reason; every
-criterion has a test target; no banned phrases; `[P]` marks only on genuinely
+criterion has a test target; for a material feature, every HLD monitor has
+a mapping row, and an upstream HLD with no Alerting entry is NEEDS-INPUT
+(revise it with /build:hld); no banned phrases; `[P]` marks only on genuinely
 disjoint work. Verdict: **READY** / **NEEDS-INPUT**, one line.
 
 ## 6. Gate, then publish

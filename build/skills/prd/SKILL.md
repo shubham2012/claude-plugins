@@ -15,6 +15,11 @@ gets the Quick form (One-liner, Goals/Non-goals, Requirements, Success
 criteria — nothing else) and at most ONE quiz round. Full pipeline is for
 genuinely new product surface. Say which form you chose in one line.
 
+**Material call** (also Stage 0): say whether this is a material feature
+(it adds a new user-facing path, service, job or integration; any one
+counts). That call drives the monitoring requirements below; when unsure,
+treat it as material.
+
 **Mode** (also Stage 0): CREATE (default) or REVISE. REVISE fires when the
 input names an existing PRD (Notion link or file), or one is found and
 confirmed with the user. In REVISE:
@@ -84,8 +89,9 @@ the Open Questions section, visibly, never deleted.
 Check: no placeholder text or banned phrases ("TBD", "improve", "better UX",
 "appropriate"), every requirement has at least one testable criterion, goals
 and non-goals don't overlap, every dependency named in research appears in the
-doc. Verdict: **READY** or **NEEDS-INPUT** (with what's missing). Say it in
-one line.
+doc; for a material feature, every success/guardrail metric names where it's
+watched in production. Verdict: **READY** or **NEEDS-INPUT** (with what's
+missing). Say it in one line.
 
 ## 6. Gate, then publish
 

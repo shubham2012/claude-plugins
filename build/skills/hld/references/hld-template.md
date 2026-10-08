@@ -1,7 +1,7 @@
 # HLD template
 
 Synthesized 2026-09-23 from spec-kit's plan template (constitution-check
-gate), BMAD's architecture template, and the failure classes Nirvana
+gate), BMAD's architecture template, and the failure classes code
 reviewers actually flag (races on retry paths, telemetry parity, migration
 safety). Omit sections with nothing real; Quick form = 1, 3, 6, 8.
 
@@ -38,6 +38,14 @@ on live columns; every migration states its rollback.
   trace it end to end.
 - **Observability**: metrics/logs/traces added; parallel paths emit
   equivalent telemetry (tags included).
+- **Alerting** (always present, never omitted): for a material feature
+  (Stage 0 call), every failure mode above gets a monitor defined as code
+  (signal, threshold, owner/paging channel, runbook) or a written "not
+  alerted because <reason>". Not material → "N/A: <why not material>".
+  Monitors live wherever the target repo keeps monitoring as code (e.g.
+  Terraform/CDKTF monitor resources, or an observability tool's config
+  files); find it and cite the real path. None exists → name where they
+  will live and mark each monitor to-create.
 - **Security/privacy**: authz boundaries, PII paths, secrets.
 - **Rollout & rollback**: flags, sequencing, and the undo path for each step.
 
