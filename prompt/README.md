@@ -8,8 +8,8 @@ frontier rounds — each round asks only questions whose prerequisites are
 settled, with a recommended answer marked; facts are researched, never asked.
 Terminates when the frontier is empty (4-round backstop parks leftovers as
 `[NEEDS CLARIFICATION]`), then the same outcome-spec and review gate as
-refine. Refine hands off to grill when it finds more than three load-bearing
-unknowns.
+refine. Refine hands off to grill when the unknowns are foundational rather
+than a few decisions.
 
 # refine
 
@@ -23,12 +23,15 @@ review. Refinement is **opt-in per prompt**: nothing runs unless you invoke it.
 /prompt:refine fix the flaky billing test
 ```
 
-For a non-trivial prompt you get exactly four parts:
+For a non-trivial prompt, refine first grounds itself in the repo (and any
+connected tools), then quizzes you one question at a time on whatever is
+still genuinely missing. That might be nothing for a clear task, or several
+questions for a complex one. Then you get:
 
 - **a.** the refined prompt as one copyable block
 - **b.** Corrections (`before → after`, or "no wording changes")
 - **c.** Grounding (verified `file:line` facts vs `[unverified]`)
-- **d.** up to three questions with options (omitted if none)
+- **d.** Decisions (`question → your choice`, omitted if nothing was asked)
 
 then a choice: **Run refined / Run refined, I'll edit first / Run original /
 Cancel**. Nothing executes before you pick.

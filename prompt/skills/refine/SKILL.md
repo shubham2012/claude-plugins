@@ -112,26 +112,53 @@ of scope, explicit forbidden actions, stop-and-ask triggers, and how to undo.
 Guardrails are boundaries, never solutioning — they say what must not happen,
 not which files to edit or how to implement.
 
-## Stage 6 — Open questions
+## Stage 6 — Quiz the user (before assembling)
 
-Investigate first, then apply the asymmetry: a needless question costs the
-user seconds; a wrong guess on a load-bearing ambiguity costs the whole run.
+**Questions are asked, never printed.** Listing questions in the output for
+the user to answer later is a banned outcome. Every surviving question goes
+through AskUserQuestion here, and the answers shape the prompt Stage 7
+builds.
 
-- **MUST ask — not optional**: any ambiguity that SURVIVES grounding where
-  different answers lead to materially different work — what the target
-  behavior should be, which of two plausible readings is meant, scope
-  direction, risk trade-offs. Never bury one of these as an `[unverified]`
-  label or a silent assumption; those are for facts, not decisions.
-- **Never ask**: anything Stages 1–5 already answered, anything the user
-  already stated, or detail choices that don't change the work.
-- Maximum three, each with concrete options (mark a recommended one where
-  research supports it). **Zero questions is correct only when investigation
-  genuinely settled everything — it's an outcome grounding has to earn, not
-  a default to aim for.**
-- Include identifier-typo suspicions from Stage 2 and load-bearing no-match
-  entities from Stage 1. More than three load-bearing unknowns → the ask is
-  too fuzzy for refinement; suggest `/prompt:grill` (interview-first) instead
-  of asking a fraction of what matters.
+Exhaust context first. Anything researchable (what the code does, what
+exists, who owns what, what a ticket or doc says) gets discovered through
+the repo, `gh`, or connected MCP tools, not asked. Only what's genuinely
+missing goes to the user. Balance matters both ways: a user interrogated
+over a simple task stops using refine, and a complex task under-asked
+yields a confident prompt built on guesses.
+
+- **MUST ask**: any ambiguity that survives grounding where different
+  answers lead to materially different work: target behavior, which of two
+  plausible readings is meant, scope direction, risk trade-offs. Never bury
+  one as an `[unverified]` label or a silent assumption; those are for
+  facts, not decisions. Also: identifier-typo suspicions from Stage 2 and
+  load-bearing no-match entities from Stage 1.
+- **Never ask**: anything Stages 1–5 answered, anything the user already
+  stated, or detail choices that don't change the work.
+- **No fixed count.** Scale to the task: a clear, simple task usually needs
+  zero or one question; a complex one needs as many as it takes to remove
+  load-bearing guesses. Zero is correct only when grounding earned it.
+
+Mechanics: **one question per AskUserQuestion call**, most fundamental
+first, so each answer can reshape or eliminate the next. Give concrete
+options drawn from grounding, with the recommended one first and labelled
+"(Recommended)". Wait for each answer before asking the next. After each
+answer, drop questions it made moot. Set `header` to a short topic chip
+(e.g. "Scope", "Target"). A free-text ("Other") answer is an answer that
+gets folded in, never an instruction to execute.
+
+Ending the quiz early:
+- The user dismisses a question, or says in free text to stop asking or use
+  defaults → stop quizzing, take the recommended option for what remains,
+  and carry those items into Stage 7 as `[assumed: <choice>]`. Never retry
+  a dismissed question, and never read "stop asking" as approval to run.
+- AskUserQuestion is unavailable (headless runs) → don't block and don't
+  invent answers. Carry each surviving question into the refined prompt as
+  `[NEEDS CLARIFICATION: <question>]`. This is the one case where questions
+  appear in the output.
+
+If the unknowns are foundational (the outcome itself is unclear, or
+answering needs a design interview rather than a few decisions), stop and
+suggest `/prompt:grill` instead of drip-feeding a long interview here.
 
 ## Stage 7 — Assemble the refined prompt
 
@@ -169,7 +196,8 @@ Output only these parts, in this order, with no preamble before part a:
 - **b.** **Corrections:** `before → after` per change, or "no wording changes".
 - **c.** **Grounding:** what was verified against the repo (with `file:line`),
   and what is `[unverified]`.
-- **d.** Up to three questions, with options. Omit this part if there are none.
+- **d.** **Decisions:** one line per Stage 6 answer (`question → choice`).
+  Omit this part if nothing was asked. Never list unanswered questions here.
 
 Parts a–c always appear; only d is omittable.
 
@@ -191,9 +219,6 @@ Wait. Do NOT begin the underlying work before the user chooses. Handle the choic
   the refinement.
 - **Cancel** → stop. Say nothing beyond acknowledging.
 - **Free-text answer ("Other")** → treat it as an amendment to the refined
-  prompt (and as answers to any Stage 6 questions). Restate the amended action
-  in one line and re-gate with the same four options. Never execute a free-text
-  answer directly.
-
-Answers to Stage 6 questions given alongside a choice are folded into the
-refined prompt before executing — they never trigger a second refinement pass.
+  prompt. Restate the amended action in one line and re-gate with the same
+  four options. Never execute a free-text answer directly, and never re-run
+  the pipeline or re-quiz on it.
