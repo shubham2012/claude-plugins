@@ -24,7 +24,7 @@ context continuity. Each plugin is independent — install only what you want.
 | [build](./build/) | `/build:hld` | System-grounded design doc: alternatives required, PASS/FAIL constraint check vs the PRD |
 | [build](./build/) | `/build:spec` | Execution contract: traceable EARS criteria, interface contracts, test mapping, rollout |
 | [build](./build/) | `/build:adr` | One decision, real alternatives, consequences — numbered, immutable once accepted, supersede don't edit |
-| [onboard](./onboard/) | `/onboard:agents` | Generate/refresh CLAUDE.md/AGENTS.md from the repo: commands verified by running, conventions dated |
+| [onboard](./onboard/) | `/onboard:agents` | Generate/refresh agent docs from the repo: commands verified by running, conventions dated, each fact routed to the file that loads when it's needed (root/nested CLAUDE.md, path-scoped rules, skills) |
 | [write](./write/) | `/write:humanize` | Strip generated-text patterns from a draft, file, or PR description without changing a fact; writes gated |
 
 ## Install
