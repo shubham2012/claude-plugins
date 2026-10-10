@@ -1,0 +1,27 @@
+README.md
+  s_4f14c939b947ab::t_07279ea06a45e8 27
+onboard/.claude-plugin/plugin.json
+  s_4f14c939b947ab::t_9f5fb6ecc75dca 3-4
+onboard/README.md
+  s_4f14c939b947ab::t_101d94fc5f53f0 19-34
+onboard/skills/agents/SKILL.md
+  s_4f14c939b947ab::t_12a92857396289 3,14-16,20-24,26-28,35,40-44,76,78-83,92-123,127-133,139-150,154-157,159-161
+onboard/skills/agents/references/placement.md
+  s_4f14c939b947ab::t_181101058d5901 1-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b723df23d163695be42df323b6acbe1e9673516a",
+  "prompts": {},
+  "sessions": {
+    "s_4f14c939b947ab": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f0affe07-a5fc-4694-a46b-09e42e1b85db",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shubham Gupta <shubham2012@users.noreply.github.com>"
+    }
+  }
+}
