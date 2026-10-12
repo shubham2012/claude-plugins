@@ -24,6 +24,8 @@ context continuity. Each plugin is independent — install only what you want.
 | [build](./build/) | `/build:hld` | System-grounded design doc: alternatives required, PASS/FAIL constraint check vs the PRD |
 | [build](./build/) | `/build:spec` | Execution contract: traceable EARS criteria, interface contracts, test mapping, rollout |
 | [build](./build/) | `/build:adr` | One decision, real alternatives, consequences — numbered, immutable once accepted, supersede don't edit |
+| [build](./build/) | `/build:plan` | Spec → executable plan: file map, test-first tasks with contracts and done criteria, [P] parallel groups; saved locally, never committed |
+| [build](./build/) | `/build:execute` | Run an approved plan with subagents: fresh agent per task, two-part review, capped fix loop, ledger, fresh evidence; never pushes |
 | [onboard](./onboard/) | `/onboard:agents` | Generate/refresh agent docs from the repo: commands verified by running, conventions dated, each fact routed to the file that loads when it's needed (root/nested CLAUDE.md, path-scoped rules, skills) |
 | [write](./write/) | `/write:humanize` | Strip generated-text patterns from a draft, file, or PR description without changing a fact; writes gated |
 | [write](./write/) | `/write:improve` | Rewrite a draft to the tone and length you pick (concise / normal / expanded) without changing a fact |

@@ -9,7 +9,7 @@ argument-hint: <feature name, HLD/PRD link, or ticket>
 Input: $ARGUMENTS (empty → take it from the user's most recent message; none
 anywhere → ask what feature this specs and stop). Template:
 `references/spec-template.md` — read before Stage 1. The spec is the bridge from design to execution: after this, the
-work should be startable via /prompt:refine or a plan skill with zero new
+work should be startable via /prompt:refine or /build:plan with zero new
 decisions.
 
 **Size the ceremony** (Stage 0): single-service, no-contract-change features
@@ -104,5 +104,5 @@ with an explicit user-confirmed `parent` — NEVER `creation_mode: "draft"`
 (it creates an unplaced page without asking). No confirmed destination, or
 Notion missing/erroring → say so once, fall back to option 2.
 
-Done → the handoff line: run /prompt:refine (or your plan skill) on
-workstream 1, spec link attached.
+Done → the handoff line: /build:plan with the spec link for work that
+splits into tasks, or /prompt:refine on workstream 1 for a small change.

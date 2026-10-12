@@ -33,7 +33,7 @@
     {
       "name": "build",
       "source": "./build",
-      "description": "Feature-work document pipeline: /build:prd, /build:hld, /build:spec, /build:adr \u2014 quiz + internal research + marked ambiguity + publish gate (Notion or markdown)."
+      "description": "Feature-work pipeline: /build:prd, /build:hld, /build:spec, /build:adr (quiz + research + marked ambiguity + publish gate), then /build:plan (test-first task plan) and /build:execute (subagent execution with per-task review, never pushes)."
     },
     {
       "name": "ctx",

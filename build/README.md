@@ -1,6 +1,7 @@
 # build
 
-The document pipeline for feature work — four skills. Three form an enforced
+The pipeline for feature work, from idea to merged code. Four skills write
+the documents and two turn a spec into code. The documents form an enforced
 order of thought: **what/why → how → execution contract**; the fourth (adr)
 sits beside the pipeline for standalone decisions. Each skill quizzes you only
 on what it can't research, grounds everything else in the repo and connected
@@ -49,6 +50,29 @@ markdown), and **immutable once accepted** — changing the decision means a
 new ADR that supersedes the old one, never an edit. For choices too small
 for an HLD; the HLD's alternatives section points here.
 
+## /build:plan `<spec link | file>`
+
+Turns a spec into a plan a fresh agent can execute one task at a time. It
+starts with a file map, then lists small tasks. Each task names the files
+it touches (as evidence, not orders), the contracts it consumes and
+produces, a failing test to write first, and done criteria with exact
+commands. Tasks with disjoint file sets are marked `[P]`, and for a material
+feature each `Monitor:` row becomes a task. The plan carries no
+implementation code, because it specs the outcome. A small change gets
+pointed at /prompt:refine instead. Plans are saved to `.claude/plans/` and
+git-excluded, never committed.
+
+## /build:execute `<plan path>`
+
+Runs an approved plan. You stay the controller. Each task goes to a fresh
+agent with a small brief and works test-first; `[P]` groups run in
+parallel, each in its own worktree. After every task the controller re-runs
+the done criteria itself, and a fresh reviewer checks that the change
+matches the task, then its quality. Fixes are capped at 3 rounds, then a
+logged ruling. A ledger next to the plan survives compaction, so a run can
+resume. It refuses to run on the default branch, commits locally, and never
+pushes. It hands off to `/pr:ready`.
+
 ## Where the design came from
 
 Mechanisms adopted from the convergent practice of spec-kit, Kiro, and
@@ -58,6 +82,12 @@ requirement-ID traceability, distinct-verdict review gates, and
 dependency-derived parallelism marks. Their reported failure mode — full
 ceremony on trivial asks — is designed out: every skill sizes the form to
 the ask (Quick forms exist) before asking a single question.
+
+Plan and execute adapt mechanisms from superpowers (MIT, Jesse Vincent;
+studied 2026-10-12): file map before tasks, self-contained tasks, a fresh
+agent per task fed a brief, two-part review, a compaction-proof ledger, and
+evidence before claims. They're re-authored for the outcome-not-path rule,
+so tasks carry tests and contracts, not code.
 
 ## Install
 
