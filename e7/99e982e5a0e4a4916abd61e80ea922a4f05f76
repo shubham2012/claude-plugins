@@ -1,0 +1,27 @@
+.claude-plugin/marketplace.json
+  s_4f14c939b947ab::t_62e467d5dfc9dc 51
+README.md
+  s_4f14c939b947ab::t_f0798262f34417 29
+write/.claude-plugin/plugin.json
+  s_4f14c939b947ab::t_5aabfe74d5f404 3-4
+write/README.md
+  s_4f14c939b947ab::t_cddeb8ade77c85 6-17
+write/skills/improve/SKILL.md
+  s_4f14c939b947ab::t_12c2af7627b8a8 1-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e799e982e5a0e4a4916abd61e80ea922a4f05f76",
+  "prompts": {},
+  "sessions": {
+    "s_4f14c939b947ab": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f0affe07-a5fc-4694-a46b-09e42e1b85db",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Shubham Gupta <shubham2012@users.noreply.github.com>"
+    }
+  }
+}
