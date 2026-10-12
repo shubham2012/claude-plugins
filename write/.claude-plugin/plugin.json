@@ -1,7 +1,7 @@
 {
   "name": "write",
-  "description": "Prose editing: /write:humanize strips generated-text patterns from drafts, files, and PR descriptions without changing a fact; writes are gated.",
-  "version": "0.1.0",
+  "description": "Prose editing: /write:improve rewrites to a tone and length you pick (concise / normal / expanded); /write:humanize strips generated-text patterns. Neither changes a fact; file and PR writes are gated.",
+  "version": "0.2.0",
   "author": {
     "name": "Shubham Gupta"
   }

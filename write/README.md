@@ -3,6 +3,18 @@
 Prose editing for the text we produce every day: PR descriptions, commit
 messages, specs, RCAs, Slack posts.
 
+## /write:improve `[tone/length] <text | file>`
+
+Rewrites a draft to the tone and length you pick. It reads the text first,
+then asks two questions in one round. Tone offers options that fit the text
+and its reader, with "keep current" first. Length offers Concise (about
+half), Normal (about the same), or Expanded (fuller, using only what the
+text says). If you already said "make this concise and friendly", it
+doesn't ask. Every fact survives, nothing new is claimed, and the rewrite
+avoids humanize's catalogue of generated-text patterns. Expanding never
+invents detail: spots that would need more facts come back under **Needs
+you**. File writes are gated with Apply / Show full text / Cancel.
+
 ## /write:humanize `<text | file | PR>`
 
 Edits a draft so it reads like a person explaining something to a

@@ -48,7 +48,7 @@
     {
       "name": "write",
       "source": "./write",
-      "description": "Prose editing: /write:humanize strips generated-text patterns (false contrasts, punchline closers, dash overuse, inflated vocabulary, chat residue) without changing a fact; file and PR writes gated."
+      "description": "Prose editing: /write:improve rewrites to a chosen tone and length (concise / normal / expanded); /write:humanize strips generated-text patterns. Neither changes a fact; file and PR writes gated."
     }
   ]
 }

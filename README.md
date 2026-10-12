@@ -26,6 +26,7 @@ context continuity. Each plugin is independent — install only what you want.
 | [build](./build/) | `/build:adr` | One decision, real alternatives, consequences — numbered, immutable once accepted, supersede don't edit |
 | [onboard](./onboard/) | `/onboard:agents` | Generate/refresh agent docs from the repo: commands verified by running, conventions dated, each fact routed to the file that loads when it's needed (root/nested CLAUDE.md, path-scoped rules, skills) |
 | [write](./write/) | `/write:humanize` | Strip generated-text patterns from a draft, file, or PR description without changing a fact; writes gated |
+| [write](./write/) | `/write:improve` | Rewrite a draft to the tone and length you pick (concise / normal / expanded) without changing a fact |
 
 ## Install
 
